@@ -1,0 +1,8 @@
+com\smo\service\MailServiceImpl.class
+com\smo\service\MailService.class
+com\smo\util\ContactMappings.class
+com\smo\util\ViewNames.class
+com\smo\config\WebConfig.class
+com\smo\controller\ContactController.class
+com\smo\entite\Contact.class
+com\smo\WebMain.class
