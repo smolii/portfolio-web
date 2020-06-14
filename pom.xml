@@ -72,7 +72,7 @@
                 <artifactId>heroku-maven-plugin</artifactId>
                 <version>3.0.2</version>
                 <configuration>
-                    <appName>portfolio-web</appName>
+                    <appName>smo-portfolio-web</appName>
                     <processTypes>
                         <web>java -jar -Dserver.port=$PORT target/${project.build.finalName}.jar</web>
                     </processTypes>
