@@ -39,4 +39,9 @@ public class ContactController {
         }
         return "redirect:" + ContactMappings.HOME_PAGE;
     }
+
+    @GetMapping("hello")
+    String sayHello() {
+        return "yo yo";
+    }
 }
