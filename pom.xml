@@ -45,6 +45,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
         </dependency>
     </dependencies>
     <build>
@@ -59,9 +60,9 @@
                 <version>3.0.2</version>
                 <configuration>
                     <appName>portfolio-web</appName>
-                <processTypes>
-                    <web>java -jar -Dserver.port=$PORT target/${project.build.finalName}.jar</web>
-                </processTypes>
+                    <processTypes>
+                        <web>java -jar -Dserver.port=$PORT target/${project.build.finalName}.jar</web>
+                    </processTypes>
                 </configuration>
             </plugin>
         </plugins>

@@ -156,6 +156,7 @@
       <workItem from="1592041241181" duration="595000" />
       <workItem from="1592043175917" duration="1672000" />
       <workItem from="1592127113476" duration="82000" />
+      <workItem from="1592129249989" duration="537000" />
     </task>
     <task id="LOCAL-00001" summary="New Features: sending mail with confirmation">
       <created>1591987411366</created>
@@ -199,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591993801808</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add jenkins to app">
+      <created>1592129295556</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1592129295557</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,7 +232,8 @@
     <MESSAGE value="second change to upload a project to heroku" />
     <MESSAGE value="add jar packaging to modules" />
     <MESSAGE value="delete relativePath" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete relativePath" />
+    <MESSAGE value="add jenkins to app" />
+    <option name="LAST_COMMIT_MESSAGE" value="add jenkins to app" />
   </component>
   <component name="WindowStateProjectService">
     <state x="715" y="-864" key="#Images" timestamp="1591548569664">
@@ -263,10 +272,10 @@
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/11.-1080.1920.1040@0.0.1920.1040" timestamp="1592126775854" />
     <state x="701" y="-813" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/11.-1080.1920.1040@11.-1080.1920.1040" timestamp="1591273144732" />
-    <state x="585" y="88" key="CommitChangelistDialog2" timestamp="1591993800819">
+    <state x="585" y="88" key="CommitChangelistDialog2" timestamp="1592129294756">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="88" key="CommitChangelistDialog2/0.0.1920.1040/11.-1080.1920.1040@0.0.1920.1040" timestamp="1591993800819" />
+    <state x="585" y="88" key="CommitChangelistDialog2/0.0.1920.1040/11.-1080.1920.1040@0.0.1920.1040" timestamp="1592129294756" />
     <state x="750" y="-819" key="FileChooserDialogImpl" timestamp="1591958741643">
       <screen x="11" y="-1080" width="1920" height="1040" />
     </state>
@@ -315,10 +324,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/11.-1080.1920.1040@0.0.1920.1040" timestamp="1591991747641" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1591993804022">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1592129298881">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/11.-1080.1920.1040@0.0.1920.1040" timestamp="1591993804022" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/11.-1080.1920.1040@0.0.1920.1040" timestamp="1592129298881" />
     <state x="776" y="298" key="chooseDestDirectoryDialog" timestamp="1591986575146">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
