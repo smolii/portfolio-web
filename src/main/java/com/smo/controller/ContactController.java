@@ -26,12 +26,12 @@ public class ContactController {
     }
 
     @PostMapping(ContactMappings.HOME_PAGE)
-    public String sendMail(@ModelAttribute Contact contact) {
+    public String sendMail(@ModelAttribute("contact") Contact contact) {
         try {
-            String content = "Name: " + contact.getName();
-            content += "<br>Phone: " + contact.getPhoneNumber();
-            content += "<br>Email: " + contact.getEmail();
-            content += "<br>Message: " + contact.getMessage();
+            String content = "Name: " + contact.getName() ;
+            content += "Phone: " + contact.getPhoneNumber();
+            content += "Email: " + contact.getEmail();
+            content += "Message: " + contact.getMessage();
             mailService.send(contact.getEmail(), "smolii@o2.pl", contact.getName(), content);
             Thread.sleep(2500);
         } catch (Exception e) {
