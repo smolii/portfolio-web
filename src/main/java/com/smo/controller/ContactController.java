@@ -1,5 +1,8 @@
 package com.smo.controller;
 
+import com.sendgrid.Request;
+import com.sendgrid.SendGrid;
+import com.sendgrid.helpers.mail.Mail;
 import com.smo.entite.Contact;
 import com.smo.service.MailService;
 import com.smo.util.ContactMappings;
@@ -10,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -28,16 +32,15 @@ public class ContactController {
     @PostMapping(ContactMappings.HOME_PAGE)
     public String sendMail(@ModelAttribute("contact") Contact contact) {
         try {
-            String content = "Name: " + contact.getName() ;
-            content += "Phone: " + contact.getPhoneNumber();
-            content += "Email: " + contact.getEmail();
+            String content = "Name: " + contact.getName()+ "\n";
+            content += "Phone: " + contact.getPhoneNumber()+ "\n";
+            content += "Email: " + contact.getEmail()+ "\n";
             content += "Message: " + contact.getMessage();
-            mailService.send(contact.getEmail(), "smolii@o2.pl", contact.getName(), content);
+            mailService.send(contact.getEmail(), contact.getName(), content);
             Thread.sleep(2500);
         } catch (Exception e) {
             e.getMessage();
         }
         return "redirect:" + ContactMappings.HOME_PAGE;
     }
-
 }
