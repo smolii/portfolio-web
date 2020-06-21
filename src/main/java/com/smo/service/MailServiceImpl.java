@@ -22,24 +22,33 @@ import java.io.IOException;
 @Slf4j
 public class MailServiceImpl implements MailService {
 
-    @Value("${app.sendgrid.templateId}")
+    @Value("app.sendgrid.templateId")
     private String templateId;
 
     @Autowired
     private SendGrid sendGrid;
 
+    private Request request;
+
+    public SendGrid getSendGrid() {
+        return sendGrid;
+    }
+
+    public Request getRequest() {
+        return request;
+    }
+
     @Override
     public void send(String toAddress, String subject, String content) {
-
         Email from = new Email("start800m@gmail.com");
-        String title = subject;
         Email to = new Email(toAddress);
         Content text = new Content("text/plain", content);
-        Mail mail = new Mail(from, title, to, text);
-
+        Mail mail = new Mail(from, subject, to, text);
+        Personalization personalization = new Personalization();
+        personalization.addTo(to);
+        mail.setTemplateId(templateId);
+        this.request = new Request();
         try {
-            Request request = new Request();
-
             request.setMethod(Method.POST);
             request.setEndpoint("mail/send");
             request.setBody(mail.build());
@@ -47,17 +56,5 @@ public class MailServiceImpl implements MailService {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        Personalization personalization = new Personalization();
-        personalization.addTo(to);
-        mail.setTemplateId(templateId);
-        try {
-            mail.build();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
-
-
 }

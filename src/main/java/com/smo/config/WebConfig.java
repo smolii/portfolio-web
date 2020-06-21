@@ -1,6 +1,8 @@
 package com.smo.config;
 
 import com.sendgrid.SendGrid;
+import com.smo.dao.DataPointsDaoImpl;
+import com.smo.service.DataPointsService;
 import com.smo.util.ViewNames;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.MessageSource;
@@ -18,13 +20,8 @@ import java.util.Locale;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
-//
-//    @Override
-//    public void addViewControllers(ViewControllerRegistry registry) {
-//        registry.addViewController("/").setViewName(ViewNames.INDEX);
-//    }
 
-    @Value("${app.sendgrid.key}")
+    @Value("app.sendgrid.key")
     private String appKey;
 
     @Bean

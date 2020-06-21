@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="UTF-8">
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
     <title>Smo Web</title>
+    <link rel="stylesheet" media="screen" th:href="@{/css/bootstrap-4.3.1-dist/css/bootstrap.min.css}"/>
     <link rel="stylesheet" media="screen" th:href="@{css/style.css}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
     <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
@@ -16,9 +17,9 @@
         <!--        logo-->
 
         <div>
-            <a href="#" class="logo">Smo Dev</a>
-            <select id="locales">
-                <option value="" th:text="#{lang}">Language</option>
+            <a href="#home" class="logo">Smo Dev</a>
+            <select class="custom-select" id="locales">
+                <option value="" selected th:text="#{lang}">Language</option>
                 <option value="pl" th:text="#{lang.pl}">Polish</option>
                 <option value="en" th:text="#{lang.en}">English</option>
             </select>
@@ -26,7 +27,7 @@
 
         <!--        menu-->
         <ul>
-            <li><a href="#home" class="active" th:text="#{menu.home}">Home</a></li>
+            <li><a href="#home" th:text="#{menu.home}">Home</a></li>
             <li><a href="#about" th:text="#{menu.about}">About</a></li>
             <li><a href="#services" th:text="#{menu.services}">Services</a></li>
             <li><a href="#projects" th:text="#{menu.projects}">Projects</a></li>
@@ -46,33 +47,81 @@
 <!--about section-->
 <div class="about-container" id="about">
     <div class="about-text">
-        <p>About Me</p>
-        <p>
-            Web Developer
-        </p>
-        <p>
-            Kilkumiesięczna praca jako programista języka Magik w branży telekomunikacyjnej
-            przy tworzeniu rozwiązań geoptrzestennych opartych na GE Smallworld, pozwoliła mi rozwinąć szereg
-            umiejętności,
-            takich jak: analityczne myślenie, projektowanie algorytmów I ocenianie ich złożonośći oraz efektywności.
-            Jestem również absolwentem kursu Coders Lab - Java Developer: Web. Programowanie jest moją pasją, w której
-            dobrze się odnajduję.
-        </p>
-        <p>
-            Jestem osobą, która posiada łatwość przyswajania wiedzy i z chęcią poszerza swoje
-            horyzonty. W związku z tym poszukuję nowych wyzwań i możliwości rozwoju w zawodzie programisty. Co więcej -
-            bardzo chciałbym brać
-            czynny udział w realizowaniu projektów i wspierać cały zespół.
-        </p>
-        <p>
-            Jako multimedalista i Mistrz Polski w lekkoatletyce wiem, jak ważna jest organizacja czasu, samodyscyplina w
-            wykonywaniu zadań oraz ile czasu należy
-            poświecić, aby osiągnąć wysoki poziom specjalizacji w danej dziedzinie.
-        </p>
-        <a href="pdf/CV-PL.pdf" target="_blank" type="application/pdf">
-            <button>Download CV</button>
-        </a>
+        <div class="row">
 
+            <div class="col-lg-5 col-md-9">
+                <span class="about_title" th:text="#{about.start}">Start</span>
+                <div class="about_text" th:text="#{about.start.desc}">
+                    Kilkumiesięczna praca jako programista w branży telekomunikacyjnej przy tworzeniu rozwiązań
+                    geoprzestrzennych opartych na GE Smallworld, pozwoliła mi rozwinąć szereg umiejętności, takich jak:
+                    analityczne myślenie, projektowanie algorytmów I ocenianie ich złożoności oraz efektywności. Jako
+                    multimedalista i Mistrz Polski w lekkoatletyce wiem, jak ważna jest organizacja oraz ile czasu
+                    należy poświęcić, aby osiągnąć wysoki poziom specjalizacji w każdej dziedzinie.
+                </div>
+            </div>
+
+            <div class="col-lg">
+                <span class="about_title" th:text="#{about.learning}">Nauka</span>
+                <div class="about_text" th:text="#{about.learning.desc}">
+                    Na naukę nigdy nie jest za późno, tak więc od połowy 2019 roku systematycznie poszerzam swoje
+                    umiejętności. Ukończyłem intensywny, stacjonarny 3-miesięczny kurs programowania w szkole Coders Lab
+                    w pełni finansowany ze środków unijnych - Java Web Developer. Pracowałem przez okres 6 miesięcy,
+                    zdobywając komercyjne doświadczenie. Mam też za sobą kilka kursów na platformie Udemy m.in. Java
+                    Programming Masterclass for Software Developers, Mastering Thymeleaf with Spring Boot, Java Spring
+                    Tutorial Masterclass - Learn Spring Framework 5, Docker for Java Developers, Full Stack: Angular and
+                    Spring Boot, Spring & Hibernate for Beginners, Data Strcuters and Algorithms: Deep Dive Using Java i
+                    wiele innych. Łącznie spędziłem wiele godzin robiąc to, co sprawia mi przyjemność - rozwijając swoje
+                    kompetencje.
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg">
+                <span class="about_title" th:text="#{about.features}">Cechy</span>
+                <div class="about_text">
+                    <ul class="about_text-list">
+                        <li th:text="#{about.features.desc.one}">
+                            Cechuje mnie upartość, co bardzo dobrze komponuje się z programowaniem – nie poddaję się,
+                            choćby konsola była cała czerwona i nie miała końca.
+                        </li>
+                        <li th:text="#{about.features.desc.two}">
+                            Biję brawo kiedy mogę powiedzieć:
+                            "Działa!"
+                            jedno słowo, a wzbudza nieopisaną radość.
+                        </li>
+                        <li th:text="#{about.features.desc.three}">
+                            Do działania napędza mnie rozwiązany problem, a do nauki ciekawość
+                        </li>
+                        <li th:text="#{about.features.desc.four}">
+                            Zdanie:
+                            <q>Nie ma rzeczy niemożliwych</q>
+                            stało się moim motto.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg ">
+                <span class="about_title" th:text="#{about.currently}">Aktualnie</span>
+                <div class="about_text" th:text="#{about.currently.desc}">
+                    Cały czas ćwiczę, realizując proste projekty, dzięki którym mogę robić to, co daje mi radość,
+                    wzbudza ciekawość i motywuje do działania. Nadszedł czas, aby zdobywać dalsze doświadczenie i
+                    współtworzyć prawdziwe projekty. Aktualnie szukam pracy w IT jako Junior Java Developer.
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-2">
+                <a href="pdf/CV-PL.pdf" target="_blank" type="application/pdf">
+                    <button th:text="#{download.cv_pl}">Download CV</button>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a href="pdf/CV-EN.pdf" target="_blank" type="application/pdf">
+                    <button th:text="#{download.cv_en}">Download CV</button>
+                </a>
+            </div>
+        </div>
 
     </div>
 </div>
@@ -80,8 +129,8 @@
 <div class="services" id="services">
     <!--    text-->
     <div class="services-text">
-        <p>Services</p>
-        <p>What I Can Offer</p>
+        <p th:text="#{services}">Services</p>
+        <p th:text="#{services.info}">What I Can Offer</p>
     </div>
     <!--    box-->
     <div class="services-container">
@@ -91,7 +140,7 @@
                 <i class="fas fa-brain"></i>
             </div>
             <div class="service-title">Behind the Scenes</div>
-            <div class="service-desc">
+            <div class="service-desc" th:text="#{services.basic.desc}">
                 How things work, Logic & Data are the most interesting for me.
             </div>
         </div>
@@ -102,7 +151,7 @@
                 <i class="fas fa-code"></i>
             </div>
             <div class="service-title">Back End Development</div>
-            <div class="service-desc">
+            <div class="service-desc" th:text="#{services.backend.desc}">
                 Depth knowledge of Java 8+ programming language, my favorite frameworks are Spring Boot/Spring 5,
                 Hibernate 5.
             </div>
@@ -113,7 +162,7 @@
                 <i class="fas fa-server"></i>
             </div>
             <div class="service-title">Container</div>
-            <div class="service-desc">
+            <div class="service-desc" th:text="#{services.container.desc}">
                 I'm learning how to take my apps to the next level with Docker.
             </div>
         </div>
@@ -123,7 +172,7 @@
                 <i class="fas fa-paint-brush"></i>
             </div>
             <div class="service-title">Web Development</div>
-            <div class="service-desc">
+            <div class="service-desc" th:text="#{services.web.desc}">
                 Fine understanding of front-end web technologies like HTML, CSS, JavaScript and Angular
             </div>
         </div>
@@ -133,7 +182,7 @@
                 <i class="fab fa-github"></i>
             </div>
             <div class="service-title">Control Version</div>
-            <div class="service-desc">
+            <div class="service-desc" th:text="#{services.control.desc}">
                 Experience with Git and SVN
             </div>
         </div>
@@ -142,7 +191,7 @@
                 <i class="fas fa-database"></i>
             </div>
             <div class="service-title">Databases</div>
-            <div class="service-desc">
+            <div class="service-desc" th:text="#{services.database.desc}">
                 Ability to manage a hosting environment, including database such as SQL/MySQl
             </div>
         </div>
@@ -152,63 +201,65 @@
 <!--projects-->
 <div class="container" id="projects">
     <div class="pro-card">
-        <div class="face face1">
+        <div class="face face1" id="portfolio-website">
             <div class="content">
-                <h3>sorting algorithmic</h3>
                 <ul class="social">
-                    <li><a href="#"><i class="fa fa-github"></i>Github</a></li>
-                    <li><a href="#"><i class="fa fa-smile"></i>Project</a></li>
+                    <li><a href="https://github.com/smolii/portfolio-web" target="_blank">Code</a></li>
                 </ul>
             </div>
         </div>
         <div class="face face2">
             <div class="content">
-                <p> Hypertext Markup Language (HTML) is the standard markup language
-                    for documents designed to be displayed in a web browser.</p>
+                <p>portfolio website:</p>
+                <p>In the project I used:</p>
+                <p>Java, Spring Boot 2.3</p>
+                <p>Sendgrid Email Service, Thymeleaf</p>
+                <p>JavaScript, HTML 5, CSS</p>
+
             </div>
         </div>
     </div>
     <div class="pro-card">
-        <div class="face face1">
+        <div class="face face1" id="e-commerce">
             <div class="content">
-                <h3>e-commerce shop</h3>
                 <ul class="social">
-                    <li><a href="#"><i class="fa fa-github"></i>Github</a></li>
-                    <li><a href="#"><i class="fa fa-smile"></i>Project</a></li>
+                    <li><a href="https://github.com/smolii/e-commerce-shop" target="_blank">Code</a></li>
                 </ul>
             </div>
         </div>
         <div class="face face2">
             <div class="content">
-                <p> Hypertext Markup Language (HTML) is the standard markup language
-                    for documents designed to be displayed in a web browser.</p>
+                <p>e-commerce book shop:</p>
+                <p>In the project I used:</p>
+                <p>Java, Spring Boot 2.3</p>
+                <p>Hibernate 5, MySQL</p>
+
             </div>
         </div>
     </div>
     <div class="pro-card">
-        <div class="face face1">
+        <div class="face face1" id="weather-app">
             <div class="content">
-                <h3>JS</h3>
                 <ul class="social">
-                    <li><a href="#"><i class="fa fa-github"></i>Github</a></li>
-                    <li><a href="#"><i class="fa fa-smile"></i>Project</a></li>
+                    <li><a href="#" target="_blank">Code</a></li>
                 </ul>
             </div>
         </div>
         <div class="face face2">
             <div class="content">
-                <p>
-                    Hypertext Markup Language (HTML) is the standard markup language
-                    for documents designed to be displayed in a web browser.
-                </p>
+                <p>Weather App </p>
+                <p>In the project I used:</p>
+                <p>Java, Spring Boot, Vaadin</p>
+                <p>OpenWeatherMap API</p>
             </div>
         </div>
     </div>
+
 </div>
 <!--contact me-->
 <div class="contact-me" id="contact-me">
-    <p>If you are interested in hiring me</p>
-    <button class="send-email">Contact Me</button>
+    <p th:text="#{contact.me.info}">If you are interested in hiring me</p>
+    <button class="send-email" th:text="#{contact.me}">Contact Me</button>
     <div class="contact-info">
         <div class="card">
             <i class="card-icon far fa-envelope"></i>
@@ -233,7 +284,7 @@
         <a href="https://github.com/smolii" target="_blank"><i class="fab fa-github"></i></a>
     </div>
     <!--        copyright-->
-    <p>Create by Sebastian Smoliński</p>
+    <p th:text="#{footer.createby}">Create by Sebastian Smoliński</p>
 </footer>
 <!--attached social bar-->
 <div class="a-social-b">
@@ -243,24 +294,42 @@
     <a href="https://github.com/smolii" target="_blank"><i class="fab fa-github"></i></a>
 </div>
 <!--scroll to top -->
-<a href="#" class="to-top"><i class="fas fa-chevron-up"></i></a>
+<a href="#home" class="to-top"><i class="fas fa-chevron-up"></i></a>
 <!--sending email-->
 <div class="sidebar-contact">
     <div class="toggle-c"></div>
-    <h2>Contact Me</h2>
+    <h2 th:text="#{contact.me}">Contact Me</h2>
     <form action="#" th:action="@{__${T(com.smo.util.ContactMappings).HOME_PAGE}__}" th:object="${contact}"
           method="post">
-        <input type="text" th:field="*{name}" placeholder="name">
-        <input type="email" th:field="*{email}" placeholder="email">
-        <input type="text" th:field="*{phoneNumber}" placeholder="phone number">
-        <textarea placeholder="Message" th:field="*{message}"></textarea>
-        <input id="confirmEmail" type="submit" value="Send">
+        <input type="text" th:field="*{name}" th:placeholder="#{contact.name}" required>
+        <input type="email" th:field="*{email}" th:placeholder="#{contact.email}" required
+               pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$">
+        <input type="text" th:field="*{phoneNumber}" th:placeholder="#{contact.phone}" required minlength="9"
+               maxlength="9">
+        <textarea placeholder="Message" th:field="*{message}" th:placeholder="#{contact.message}" required
+                  maxlength="300"></textarea>
+        <input id="confirmEmail" type="submit" value="Send" th:value="#{contact.submit}">
     </form>
+</div>
+<!--toast-->
+<div class="toast" id="myToast" style="position: absolute; top: 0; left: 0;">
+    <div class="toast-header">
+        <strong class="mr-auto"><i class="fa fa-grav"></i>Sendgrid Server Error</strong>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="toast-body">
+        <div>Thank you very much for trying to send me this message.</div>
+    </div>
 </div>
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/jquery.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script type="text/javascript">
+<!--scripts for toast-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script th:inline="javascript">
     $(document).ready(function () {
         $('.toggle').click(function () {
             $('.toggle').toggleClass('active')
@@ -287,14 +356,11 @@
             }
         });
     });
-
     $(document).ready(function () {
         $("#confirmEmail").click(function () {
-            swal("Good job!", "Thank you very much for sending me this message.\nI will answer it as soon as possible.", "success");
+            $("#myToast").toast('show');
         })
     })
-
-
 </script>
 </body>
 </html>
