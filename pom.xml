@@ -19,6 +19,8 @@
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <docker.image.prefix>smo-portfolio-website</docker.image.prefix>
+        <docker.image.name>smo-springboot-docker</docker.image.name>
     </properties>
 
     <dependencies>
@@ -30,11 +32,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-mail</artifactId>
-        </dependency>
-        <dependency>
+          <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
@@ -75,7 +73,7 @@
             <artifactId>validation-api</artifactId>
             <version>2.0.1.Final</version>
         </dependency>
-     </dependencies>
+    </dependencies>
 
     <build>
         <plugins>
@@ -96,5 +94,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

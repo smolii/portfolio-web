@@ -3,7 +3,6 @@ package com.smo.service;
 
 import com.sendgrid.Method;
 import com.sendgrid.Request;
-import com.sendgrid.Response;
 import com.sendgrid.SendGrid;
 import com.sendgrid.helpers.mail.Mail;
 import com.sendgrid.helpers.mail.objects.Content;
@@ -12,9 +11,7 @@ import com.sendgrid.helpers.mail.objects.Personalization;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-
 import org.springframework.stereotype.Service;
-
 import java.io.IOException;
 
 
@@ -29,14 +26,6 @@ public class MailServiceImpl implements MailService {
     private SendGrid sendGrid;
 
     private Request request;
-
-    public SendGrid getSendGrid() {
-        return sendGrid;
-    }
-
-    public Request getRequest() {
-        return request;
-    }
 
     @Override
     public void send(String toAddress, String subject, String content) {

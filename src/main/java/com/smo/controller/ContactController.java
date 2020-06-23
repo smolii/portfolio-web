@@ -1,9 +1,5 @@
 package com.smo.controller;
 
-import com.sendgrid.Request;
-import com.sendgrid.Response;
-import com.sendgrid.SendGrid;
-import com.sendgrid.helpers.mail.Mail;
 import com.smo.entite.Contact;
 import com.smo.service.MailService;
 import com.smo.util.ContactMappings;
@@ -12,16 +8,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import javax.validation.Valid;
-import java.io.IOException;
 
 @Controller
 @Slf4j
@@ -37,10 +26,8 @@ public class ContactController {
         return ViewNames.INDEX;
     }
 
-
-
     @PostMapping(ContactMappings.HOME_PAGE)
-    public String sendMail(@ModelAttribute Contact contact, ModelMap modelMap) {
+    public String sendMail(@ModelAttribute Contact contact) {
 
         String content = "Name: " + contact.getName() + "\n";
         content += "Phone: " + contact.getPhoneNumber() + "\n";
